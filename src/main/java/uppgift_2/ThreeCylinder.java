@@ -1,5 +1,8 @@
 package uppgift_2;
 
+import jakarta.enterprise.context.Dependent;
+
+@Dependent
 public class ThreeCylinder implements Motor {
 
     private final int horsePower;

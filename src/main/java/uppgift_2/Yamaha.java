@@ -1,9 +1,14 @@
 package uppgift_2;
 
+import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
+
+@Dependent
 public class Yamaha implements Snowmobile {
 
     private final Motor motor;
 
+    @Inject
     public Yamaha(Motor motor) {
         IO.println("Creating Yamaha");
         this.motor = motor;
