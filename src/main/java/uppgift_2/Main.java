@@ -1,11 +1,19 @@
 package uppgift_2;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
+import org.jboss.weld.environment.se.Weld;
+import org.jboss.weld.environment.se.WeldContainer;
 
+/**
+ * The type Main.
+ */
 public class Main {
 
+    /**
+     * Main.
+     */
     void main() {
-        ArrayList<Snowmobile> snowmobiles = new ArrayList<>();
+        /*ArrayList<Snowmobile> snowmobiles = new ArrayList<>();
 
         IO.println("\n\nCreating first snowmobile, an Ockelbo. Using 'new'.");
         // Create an Ockelbo snowmobile with an electric motor using dependency injection with "new"
@@ -39,6 +47,14 @@ public class Main {
             IO.println("Trackwidth: " + snowmobile.getTrackWidth());
             IO.println("Runs on: " + (snowmobile.getMotor().isElectric() ? "Electric" : "Gas"));
             IO.println("Suitable for work: " + (snowmobile.isForWork() ? "Yes" : "No"));
+        }*/
+
+        try (WeldContainer weldContainer = new Weld().initialize()) {
+            Yamaha yamahaFromWeld = weldContainer.select(Yamaha.class).get();
+            Skidoo skidooFromWeld = weldContainer.select(Skidoo.class).get();
+
+            IO.println("Yamaha from Weld has HP: " + yamahaFromWeld.getMotor().getHorsePower());
+            IO.println("Skidoo from Weld has no of cylinders: " + skidooFromWeld.getMotor().getCylinderCount());
         }
 
     }

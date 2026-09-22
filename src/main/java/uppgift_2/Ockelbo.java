@@ -1,9 +1,22 @@
 package uppgift_2;
 
+import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
+
+/**
+ * The type Ockelbo.
+ */
+@Dependent
 public class Ockelbo implements Snowmobile {
 
     private final Motor motor;
 
+    /**
+     * Instantiates a new Ockelbo.
+     *
+     * @param motor the motor
+     */
+    @Inject
     public Ockelbo(Motor motor) {
         IO.println("Creating Ockelbo");
         this.motor = motor;
