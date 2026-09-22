@@ -4,8 +4,14 @@ package uppgift_2;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
+/**
+ * The type Main.
+ */
 public class Main {
 
+    /**
+     * Main.
+     */
     void main() {
         /*ArrayList<Snowmobile> snowmobiles = new ArrayList<>();
 

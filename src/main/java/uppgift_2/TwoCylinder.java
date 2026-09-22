@@ -1,11 +1,17 @@
 package uppgift_2;
 
+/**
+ * The type Two cylinder.
+ */
 public class TwoCylinder implements Motor {
 
     private final int horsePower;
     private final int cylinderCount;
     private final boolean electric;
 
+    /**
+     * Instantiates a new Two cylinder.
+     */
     public TwoCylinder() {
         IO.println("Creating TwoCylinder");
         this.horsePower = 64;
