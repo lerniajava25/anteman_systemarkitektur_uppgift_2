@@ -7,6 +7,7 @@ public class ThreeCylinder implements Motor {
     private final boolean electric;
 
     public ThreeCylinder() {
+        IO.println("Creating ThreeCylinder");
         this.horsePower = 135;
         this.cylinderCount = 3;
         this.electric = false;

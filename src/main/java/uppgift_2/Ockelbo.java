@@ -5,6 +5,7 @@ public class Ockelbo implements Snowmobile {
     private final Motor motor;
 
     public Ockelbo(Motor motor) {
+        IO.println("Creating Ockelbo");
         this.motor = motor;
     }
 
