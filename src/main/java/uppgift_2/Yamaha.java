@@ -5,6 +5,7 @@ public class Yamaha implements Snowmobile {
     private final Motor motor;
 
     public Yamaha(Motor motor) {
+        IO.println("Creating Yamaha");
         this.motor = motor;
     }
 

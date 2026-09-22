@@ -7,6 +7,7 @@ public class TwoCylinder implements Motor {
     private final boolean electric;
 
     public TwoCylinder() {
+        IO.println("Creating TwoCylinder");
         this.horsePower = 64;
         this.cylinderCount = 2;
         this.electric = false;

@@ -5,6 +5,7 @@ public class Skidoo implements Snowmobile {
     private final Motor motor;
 
     public Skidoo(Motor motor) {
+        IO.println("Creating Skidoo");
         this.motor = motor;
     }
 

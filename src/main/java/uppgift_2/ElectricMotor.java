@@ -7,6 +7,7 @@ public class ElectricMotor implements Motor {
     private final boolean electric;
 
     public ElectricMotor() {
+        IO.println("Creating ElectricMotor");
         this.horsePower = 65;
         this.cylinderCount = 0;
         this.electric = true;
