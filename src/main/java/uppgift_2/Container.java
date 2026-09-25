@@ -17,6 +17,8 @@ public class Container {
      * @param <T>            the type parameter
      * @param type           the type
      * @param implementation the implementation
+     * ---
+     *  The bind function chooses which implementation to use for a given type (Interface).
      */
     public <T> void bind(Class<T> type, Class<? extends T> implementation) {
         bindings.put(type, implementation);
@@ -39,12 +41,12 @@ public class Container {
                         "No public constructor for " + concrete.getName()
                                 + " (is it an Interface without bind()?)");
             }
-            Constructor<?> constructor = constructors[0];
+            Constructor<?> constructor = constructors[0]; // Assuming there is only one public constructor
 
-            Class<?>[] parameterTypes = constructor.getParameterTypes();
-            Object[] arguments = new Object[parameterTypes.length];
+            Class<?>[] parameterTypes = constructor.getParameterTypes(); // Array to hold the parameter types
+            Object[] arguments = new Object[parameterTypes.length]; // Array to hold the arguments
             for (int i = 0; i < parameterTypes.length; i++) {
-                arguments[i] = get(parameterTypes[i]);   // recursion
+                arguments[i] = get(parameterTypes[i]);   // recursion to create the arguments
             }
 
             return type.cast(constructor.newInstance(arguments));

@@ -13,6 +13,8 @@ public class Main {
      * Main.
      */
     void main() {
+
+        // ### Remove the commented block below to test part 1 and 2 ###
         /*ArrayList<Snowmobile> snowmobiles = new ArrayList<>();
 
         IO.println("\n\nCreating first snowmobile, an Ockelbo. Using 'new'.");
@@ -28,7 +30,7 @@ public class Main {
 
         // Which brand of snowmobile to use, in this case Yamaha
         container.bind(Snowmobile.class, Yamaha.class);
-        IO.println("\n\nCreating second snowmobile, an Yamaha. Using 'container.get'");
+        IO.println("\n\nCreating second snowmobile, an0 Yamaha. Using 'container.get'");
         Snowmobile yamaha = container.get(Snowmobile.class);
         snowmobiles.add(yamaha);
 
@@ -49,6 +51,7 @@ public class Main {
             IO.println("Suitable for work: " + (snowmobile.isForWork() ? "Yes" : "No"));
         }*/
 
+        // ###  This is part 3, comment out to test part 1 and 2 ###
         try (WeldContainer weldContainer = new Weld().initialize()) {
             Yamaha yamahaFromWeld = weldContainer.select(Yamaha.class).get();
             Skidoo skidooFromWeld = weldContainer.select(Skidoo.class).get();
